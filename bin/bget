@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+"use strict";
+
+var argv = require("minimist")(process.argv.slice(2));
+var sys = require("util");
+var fs = require("fs");
+var help = function(){
+	return "Usage:\n\t\
+	bget database molecule [options] \
+	";
+}
+
+if (argv.V || argv.version) {
+  var json = require("../package.json");
+  sys.puts(json.name + ' ' + json.version);
+  process.exit(0);
+}
+if (argv.h || argv.help || argv._.length < 2) {
+  sys.puts(help());
+  process.exit(0);
+}
+var db = argv._[0];
+var mol = argv._[1];
+var path = __dirname + "/../src/"+db;
+
+fs.exists(path+".js", function(exists) {
+  if (exists) {
+		console.warn("find database");
+		require(path)(mol);
+  }
+	else{
+		console.warn("Database "+db + " not exist");
+		process.exit(0);
+	}
+});
+
