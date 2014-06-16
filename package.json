@@ -1,0 +1,28 @@
+{
+  "name": "biology-info-gather",
+  "version": "0.0.0",
+  "description": "biology APIs that directly parse info online",
+  "main": "index.js",
+  "dependencies": {
+    "web-htmlparser": "0.0.0",
+    "minimist": "0.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "node",
+    "crawler"
+  ],
+  "author": "Yuanpeng Zhou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zyp001a/node-web-htmlparser/issues"
+  },
+  "homepage": "https://github.com/zyp001a/node-web-htmlparser"
+}
